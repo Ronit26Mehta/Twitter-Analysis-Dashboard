@@ -1,0 +1,310 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="going">going</option>
+                                
+                                    <option value="whole">whole</option>
+                                
+                                    <option value="nation">nation</option>
+                                
+                                    <option value="ukraine">ukraine</option>
+                                
+                                    <option value="hasnt">hasnt</option>
+                                
+                                    <option value="won">won</option>
+                                
+                                    <option value="3yrs">3yrs</option>
+                                
+                                    <option value="fighting">fighting</option>
+                                
+                                    <option value="weapons">weapons</option>
+                                
+                                    <option value="want">want</option>
+                                
+                                    <option value="ww3">ww3</option>
+                                
+                                    <option value="europe">europe</option>
+                                
+                                    <option value="would">would</option>
+                                
+                                    <option value="will">will</option>
+                                
+                                    <option value="thats">thats</option>
+                                
+                                    <option value="why">why</option>
+                                
+                                    <option value="war">war</option>
+                                
+                                    <option value="must">must</option>
+                                
+                                    <option value="end">end</option>
+                                
+                                    <option value="trump">trump</option>
+                                
+                                    <option value="wants">wants</option>
+                                
+                                    <option value="not">not</option>
+                                
+                                    <option value="people">people</option>
+                                
+                                    <option value="can">can</option>
+                                
+                                    <option value="think">think</option>
+                                
+                                    <option value="russia">russia</option>
+                                
+                                    <option value="use">use</option>
+                                
+                                    <option value="nukes">nukes</option>
+                                
+                                    <option value="european">european</option>
+                                
+                                    <option value="help">help</option>
+                                
+                                    <option value="right">right</option>
+                                
+                                    <option value="like">like</option>
+                                
+                                    <option value="maybe">maybe</option>
+                                
+                                    <option value="dont">dont</option>
+                                
+                                    <option value="grandfather">grandfather</option>
+                                
+                                    <option value="generation">generation</option>
+                                
+                                    <option value="didnt">didnt</option>
+                                
+                                    <option value="fight">fight</option>
+                                
+                                    <option value="world">world</option>
+                                
+                                    <option value="side">side</option>
+                                
+                                    <option value="putin">putin</option>
+                                
+                                    <option value="ww2">ww2</option>
+                                
+                                    <option value="allied">allied</option>
+                                
+                                    <option value="ussr">ussr</option>
+                                
+                                    <option value="opinion">opinion</option>
+                                
+                                    <option value="theres">theres</option>
+                                
+                                    <option value="churchill">churchill</option>
+                                
+                                    <option value="one">one</option>
+                                
+                                    <option value="involved">involved</option>
+                                
+                                    <option value="what">what</option>
+                                
+                                    <option value="happened">happened</option>
+                                
+                                    <option value="out">out</option>
+                                
+                                    <option value="long">long</option>
+                                
+                                    <option value="about">about</option>
+                                
+                                    <option value="some">some</option>
+                                
+                                    <option value="other">other</option>
+                                
+                                    <option value="need">need</option>
+                                
+                                    <option value="during">during</option>
+                                
+                                    <option value="after">after</option>
+                                
+                                    <option value="fought">fought</option>
+                                
+                                    <option value="usa">usa</option>
+                                
+                                    <option value="america">america</option>
+                                
+                                    <option value="cant">cant</option>
+                                
+                                    <option value="allies">allies</option>
+                                
+                                    <option value="now">now</option>
+                                
+                                    <option value="start">start</option>
+                                
+                                    <option value="order">order</option>
+                                
+                                    <option value="same">same</option>
+                                
+                                    <option value="them">them</option>
+                                
+                                    <option value="left">left</option>
+                                
+                                    <option value="most">most</option>
+                                
+                                    <option value="white">white</option>
+                                
+                                    <option value="military">military</option>
+                                
+                                    <option value="winston">winston</option>
+                                
+                                    <option value="back">back</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "black"}, "id": "going", "label": "going", "shape": "dot", "size": 13.80952380952381, "title": "Term: going\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "whole", "label": "whole", "shape": "dot", "size": 13.80952380952381, "title": "Term: whole\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 4", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "nation", "label": "nation", "shape": "dot", "size": 13.80952380952381, "title": "Term: nation\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ukraine", "label": "ukraine", "shape": "dot", "size": 13.80952380952381, "title": "Term: ukraine\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "hasnt", "label": "hasnt", "shape": "dot", "size": 13.80952380952381, "title": "Term: hasnt\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "won", "label": "won", "shape": "dot", "size": 13.80952380952381, "title": "Term: won\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "3yrs", "label": "3yrs", "shape": "dot", "size": 13.80952380952381, "title": "Term: 3yrs\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 15", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "fighting", "label": "fighting", "shape": "dot", "size": 13.80952380952381, "title": "Term: fighting\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "weapons", "label": "weapons", "shape": "dot", "size": 13.80952380952381, "title": "Term: weapons\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "want", "label": "want", "shape": "dot", "size": 13.80952380952381, "title": "Term: want\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ww3", "label": "ww3", "shape": "dot", "size": 29.047619047619047, "title": "Term: ww3\u003cbr\u003eFrequency: 10\u003cbr\u003eConnections: 34", "value": 10}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "europe", "label": "europe", "shape": "dot", "size": 25.238095238095237, "title": "Term: europe\u003cbr\u003eFrequency: 8\u003cbr\u003eConnections: 23", "value": 8}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "would", "label": "would", "shape": "dot", "size": 17.61904761904762, "title": "Term: would\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 12", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "will", "label": "will", "shape": "dot", "size": 15.714285714285714, "title": "Term: will\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 17", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "thats", "label": "thats", "shape": "dot", "size": 19.523809523809526, "title": "Term: thats\u003cbr\u003eFrequency: 5\u003cbr\u003eConnections: 12", "value": 5}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "why", "label": "why", "shape": "dot", "size": 15.714285714285714, "title": "Term: why\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 9", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "war", "label": "war", "shape": "dot", "size": 21.428571428571427, "title": "Term: war\u003cbr\u003eFrequency: 6\u003cbr\u003eConnections: 17", "value": 6}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "must", "label": "must", "shape": "dot", "size": 13.80952380952381, "title": "Term: must\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "end", "label": "end", "shape": "dot", "size": 13.80952380952381, "title": "Term: end\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 8", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "trump", "label": "trump", "shape": "dot", "size": 13.80952380952381, "title": "Term: trump\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 8", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "wants", "label": "wants", "shape": "dot", "size": 15.714285714285714, "title": "Term: wants\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 10", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "not", "label": "not", "shape": "dot", "size": 27.142857142857142, "title": "Term: not\u003cbr\u003eFrequency: 9\u003cbr\u003eConnections: 35", "value": 9}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "people", "label": "people", "shape": "dot", "size": 13.80952380952381, "title": "Term: people\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "can", "label": "can", "shape": "dot", "size": 15.714285714285714, "title": "Term: can\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 1", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "think", "label": "think", "shape": "dot", "size": 17.61904761904762, "title": "Term: think\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 12", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "russia", "label": "russia", "shape": "dot", "size": 13.80952380952381, "title": "Term: russia\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 4", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "use", "label": "use", "shape": "dot", "size": 13.80952380952381, "title": "Term: use\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "nukes", "label": "nukes", "shape": "dot", "size": 13.80952380952381, "title": "Term: nukes\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "european", "label": "european", "shape": "dot", "size": 13.80952380952381, "title": "Term: european\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "help", "label": "help", "shape": "dot", "size": 13.80952380952381, "title": "Term: help\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 9", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "right", "label": "right", "shape": "dot", "size": 17.61904761904762, "title": "Term: right\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 24", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "like", "label": "like", "shape": "dot", "size": 17.61904761904762, "title": "Term: like\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 15", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "maybe", "label": "maybe", "shape": "dot", "size": 13.80952380952381, "title": "Term: maybe\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 9", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "dont", "label": "dont", "shape": "dot", "size": 17.61904761904762, "title": "Term: dont\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 6", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "grandfather", "label": "grandfather", "shape": "dot", "size": 13.80952380952381, "title": "Term: grandfather\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 4", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "generation", "label": "generation", "shape": "dot", "size": 13.80952380952381, "title": "Term: generation\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "didnt", "label": "didnt", "shape": "dot", "size": 13.80952380952381, "title": "Term: didnt\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "fight", "label": "fight", "shape": "dot", "size": 13.80952380952381, "title": "Term: fight\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "world", "label": "world", "shape": "dot", "size": 19.523809523809526, "title": "Term: world\u003cbr\u003eFrequency: 5\u003cbr\u003eConnections: 14", "value": 5}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "side", "label": "side", "shape": "dot", "size": 13.80952380952381, "title": "Term: side\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 4", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "putin", "label": "putin", "shape": "dot", "size": 13.80952380952381, "title": "Term: putin\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 12", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ww2", "label": "ww2", "shape": "dot", "size": 50.0, "title": "Term: ww2\u003cbr\u003eFrequency: 21\u003cbr\u003eConnections: 46", "value": 21}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "allied", "label": "allied", "shape": "dot", "size": 15.714285714285714, "title": "Term: allied\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 4", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ussr", "label": "ussr", "shape": "dot", "size": 15.714285714285714, "title": "Term: ussr\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 6", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "opinion", "label": "opinion", "shape": "dot", "size": 13.80952380952381, "title": "Term: opinion\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "theres", "label": "theres", "shape": "dot", "size": 13.80952380952381, "title": "Term: theres\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "churchill", "label": "churchill", "shape": "dot", "size": 17.61904761904762, "title": "Term: churchill\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 5", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "one", "label": "one", "shape": "dot", "size": 13.80952380952381, "title": "Term: one\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "involved", "label": "involved", "shape": "dot", "size": 13.80952380952381, "title": "Term: involved\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 10", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "what", "label": "what", "shape": "dot", "size": 13.80952380952381, "title": "Term: what\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 10", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "happened", "label": "happened", "shape": "dot", "size": 13.80952380952381, "title": "Term: happened\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 10", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "out", "label": "out", "shape": "dot", "size": 15.714285714285714, "title": "Term: out\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 15", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "long", "label": "long", "shape": "dot", "size": 13.80952380952381, "title": "Term: long\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "about", "label": "about", "shape": "dot", "size": 19.523809523809526, "title": "Term: about\u003cbr\u003eFrequency: 5\u003cbr\u003eConnections: 15", "value": 5}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "some", "label": "some", "shape": "dot", "size": 13.80952380952381, "title": "Term: some\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "other", "label": "other", "shape": "dot", "size": 13.80952380952381, "title": "Term: other\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "need", "label": "need", "shape": "dot", "size": 17.61904761904762, "title": "Term: need\u003cbr\u003eFrequency: 4\u003cbr\u003eConnections: 10", "value": 4}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "during", "label": "during", "shape": "dot", "size": 21.428571428571427, "title": "Term: during\u003cbr\u003eFrequency: 6\u003cbr\u003eConnections: 6", "value": 6}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "after", "label": "after", "shape": "dot", "size": 13.80952380952381, "title": "Term: after\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "fought", "label": "fought", "shape": "dot", "size": 13.80952380952381, "title": "Term: fought\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 1", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "usa", "label": "usa", "shape": "dot", "size": 13.80952380952381, "title": "Term: usa\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 5", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "america", "label": "america", "shape": "dot", "size": 13.80952380952381, "title": "Term: america\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "cant", "label": "cant", "shape": "dot", "size": 13.80952380952381, "title": "Term: cant\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 7", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "allies", "label": "allies", "shape": "dot", "size": 13.80952380952381, "title": "Term: allies\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "now", "label": "now", "shape": "dot", "size": 13.80952380952381, "title": "Term: now\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 6", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "start", "label": "start", "shape": "dot", "size": 13.80952380952381, "title": "Term: start\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "order", "label": "order", "shape": "dot", "size": 15.714285714285714, "title": "Term: order\u003cbr\u003eFrequency: 3\u003cbr\u003eConnections: 5", "value": 3}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "same", "label": "same", "shape": "dot", "size": 13.80952380952381, "title": "Term: same\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 1", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "them", "label": "them", "shape": "dot", "size": 13.80952380952381, "title": "Term: them\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 1", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "left", "label": "left", "shape": "dot", "size": 13.80952380952381, "title": "Term: left\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 10", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "most", "label": "most", "shape": "dot", "size": 13.80952380952381, "title": "Term: most\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 1", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "white", "label": "white", "shape": "dot", "size": 13.80952380952381, "title": "Term: white\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "military", "label": "military", "shape": "dot", "size": 13.80952380952381, "title": "Term: military\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 1", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "winston", "label": "winston", "shape": "dot", "size": 13.80952380952381, "title": "Term: winston\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 3", "value": 2}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "back", "label": "back", "shape": "dot", "size": 13.80952380952381, "title": "Term: back\u003cbr\u003eFrequency: 2\u003cbr\u003eConnections: 2", "value": 2}]);
+                  edges = new vis.DataSet([{"from": "going", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "going", "title": "Co-occurrence: 4", "to": "ww3", "value": 4}, {"from": "going", "title": "Co-occurrence: 2", "to": "europe", "value": 2}, {"from": "going", "title": "Co-occurrence: 3", "to": "will", "value": 3}, {"from": "going", "title": "Co-occurrence: 2", "to": "not", "value": 2}, {"from": "going", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "whole", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "whole", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "whole", "title": "Co-occurrence: 2", "to": "europe", "value": 2}, {"from": "whole", "title": "Co-occurrence: 3", "to": "would", "value": 3}, {"from": "nation", "title": "Co-occurrence: 2", "to": "hasnt", "value": 2}, {"from": "nation", "title": "Co-occurrence: 2", "to": "won", "value": 2}, {"from": "nation", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "nation", "title": "Co-occurrence: 2", "to": "want", "value": 2}, {"from": "nation", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "ukraine", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "ukraine", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "ukraine", "title": "Co-occurrence: 2", "to": "europe", "value": 2}, {"from": "hasnt", "title": "Co-occurrence: 2", "to": "won", "value": 2}, {"from": "hasnt", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "hasnt", "title": "Co-occurrence: 2", "to": "want", "value": 2}, {"from": "hasnt", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "won", "title": "Co-occurrence: 2", "to": "3yrs", "value": 2}, {"from": "won", "title": "Co-occurrence: 2", "to": "want", "value": 2}, {"from": "won", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "fighting", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "weapons", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "want", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 4", "to": "ww3", "value": 4}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "europe", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "would", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "will", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "thats", "value": 2}, {"from": "3yrs", "title": "Co-occurrence: 2", "to": "why", "value": 2}, {"from": "fighting", "title": "Co-occurrence: 3", "to": "ww3", "value": 3}, {"from": "weapons", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "weapons", "title": "Co-occurrence: 4", "to": "europe", "value": 4}, {"from": "weapons", "title": "Co-occurrence: 2", "to": "need", "value": 2}, {"from": "weapons", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "weapons", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "want", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 4", "to": "europe", "value": 4}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "would", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 6", "to": "will", "value": 6}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "ww3", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 4", "to": "thats", "value": 4}, {"from": "ww3", "title": "Co-occurrence: 4", "to": "why", "value": 4}, {"from": "ww3", "title": "Co-occurrence: 3", "to": "war", "value": 3}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "end", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 3", "to": "trump", "value": 3}, {"from": "ww3", "title": "Co-occurrence: 4", "to": "wants", "value": 4}, {"from": "ww3", "title": "Co-occurrence: 7", "to": "not", "value": 7}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "think", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "russia", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "use", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "nukes", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "european", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "help", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 5", "to": "right", "value": 5}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "like", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "maybe", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "involved", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "what", "value": 2}, {"from": "ww3", "title": "Co-occurrence: 2", "to": "happened", "value": 2}, {"from": "europe", "title": "Co-occurrence: 3", "to": "would", "value": 3}, {"from": "europe", "title": "Co-occurrence: 3", "to": "will", "value": 3}, {"from": "europe", "title": "Co-occurrence: 2", "to": "thats", "value": 2}, {"from": "europe", "title": "Co-occurrence: 2", "to": "think", "value": 2}, {"from": "europe", "title": "Co-occurrence: 2", "to": "war", "value": 2}, {"from": "europe", "title": "Co-occurrence: 2", "to": "not", "value": 2}, {"from": "europe", "title": "Co-occurrence: 5", "to": "right", "value": 5}, {"from": "europe", "title": "Co-occurrence: 4", "to": "dont", "value": 4}, {"from": "europe", "title": "Co-occurrence: 5", "to": "ww2", "value": 5}, {"from": "europe", "title": "Co-occurrence: 4", "to": "america", "value": 4}, {"from": "europe", "title": "Co-occurrence: 7", "to": "need", "value": 7}, {"from": "europe", "title": "Co-occurrence: 3", "to": "europe", "value": 3}, {"from": "europe", "title": "Co-occurrence: 6", "to": "left", "value": 6}, {"from": "europe", "title": "Co-occurrence: 6", "to": "out", "value": 6}, {"from": "europe", "title": "Co-occurrence: 3", "to": "some", "value": 3}, {"from": "europe", "title": "Co-occurrence: 3", "to": "usa", "value": 3}, {"from": "would", "title": "Co-occurrence: 2", "to": "not", "value": 2}, {"from": "would", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "would", "title": "Co-occurrence: 3", "to": "world", "value": 3}, {"from": "would", "title": "Co-occurrence: 2", "to": "like", "value": 2}, {"from": "would", "title": "Co-occurrence: 4", "to": "about", "value": 4}, {"from": "would", "title": "Co-occurrence: 2", "to": "ussr", "value": 2}, {"from": "would", "title": "Co-occurrence: 2", "to": "back", "value": 2}, {"from": "would", "title": "Co-occurrence: 2", "to": "allied", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "think", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "war", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "russia", "value": 2}, {"from": "will", "title": "Co-occurrence: 4", "to": "not", "value": 4}, {"from": "will", "title": "Co-occurrence: 2", "to": "use", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "nukes", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "european", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "help", "value": 2}, {"from": "will", "title": "Co-occurrence: 4", "to": "right", "value": 4}, {"from": "will", "title": "Co-occurrence: 2", "to": "like", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "maybe", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "trump", "value": 2}, {"from": "will", "title": "Co-occurrence: 2", "to": "wants", "value": 2}, {"from": "thats", "title": "Co-occurrence: 4", "to": "not", "value": 4}, {"from": "thats", "title": "Co-occurrence: 4", "to": "involved", "value": 4}, {"from": "thats", "title": "Co-occurrence: 4", "to": "what", "value": 4}, {"from": "thats", "title": "Co-occurrence: 4", "to": "happened", "value": 4}, {"from": "thats", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "thats", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "thats", "title": "Co-occurrence: 3", "to": "long", "value": 3}, {"from": "thats", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "thats", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "why", "title": "Co-occurrence: 2", "to": "war", "value": 2}, {"from": "why", "title": "Co-occurrence: 2", "to": "must", "value": 2}, {"from": "why", "title": "Co-occurrence: 4", "to": "end", "value": 4}, {"from": "why", "title": "Co-occurrence: 2", "to": "trump", "value": 2}, {"from": "why", "title": "Co-occurrence: 4", "to": "wants", "value": 4}, {"from": "why", "title": "Co-occurrence: 2", "to": "not", "value": 2}, {"from": "why", "title": "Co-occurrence: 2", "to": "people", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "end", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "trump", "value": 2}, {"from": "war", "title": "Co-occurrence: 3", "to": "wants", "value": 3}, {"from": "war", "title": "Co-occurrence: 4", "to": "not", "value": 4}, {"from": "war", "title": "Co-occurrence: 2", "to": "think", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "use", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "nukes", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "like", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "fight", "value": 2}, {"from": "war", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "war", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "war", "title": "Co-occurrence: 2", "to": "can", "value": 2}, {"from": "must", "title": "Co-occurrence: 2", "to": "end", "value": 2}, {"from": "must", "title": "Co-occurrence: 2", "to": "wants", "value": 2}, {"from": "end", "title": "Co-occurrence: 2", "to": "trump", "value": 2}, {"from": "end", "title": "Co-occurrence: 4", "to": "wants", "value": 4}, {"from": "end", "title": "Co-occurrence: 2", "to": "not", "value": 2}, {"from": "end", "title": "Co-occurrence: 2", "to": "people", "value": 2}, {"from": "trump", "title": "Co-occurrence: 3", "to": "wants", "value": 3}, {"from": "trump", "title": "Co-occurrence: 3", "to": "not", "value": 3}, {"from": "trump", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "wants", "title": "Co-occurrence: 4", "to": "not", "value": 4}, {"from": "wants", "title": "Co-occurrence: 2", "to": "people", "value": 2}, {"from": "wants", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "not", "title": "Co-occurrence: 4", "to": "think", "value": 4}, {"from": "not", "title": "Co-occurrence: 2", "to": "russia", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "use", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "nukes", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "european", "value": 2}, {"from": "not", "title": "Co-occurrence: 3", "to": "not", "value": 3}, {"from": "not", "title": "Co-occurrence: 4", "to": "help", "value": 4}, {"from": "not", "title": "Co-occurrence: 6", "to": "right", "value": 6}, {"from": "not", "title": "Co-occurrence: 7", "to": "like", "value": 7}, {"from": "not", "title": "Co-occurrence: 4", "to": "maybe", "value": 4}, {"from": "not", "title": "Co-occurrence: 7", "to": "world", "value": 7}, {"from": "not", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "not", "title": "Co-occurrence: 6", "to": "ww2", "value": 6}, {"from": "not", "title": "Co-occurrence: 2", "to": "opinion", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "theres", "value": 2}, {"from": "not", "title": "Co-occurrence: 4", "to": "involved", "value": 4}, {"from": "not", "title": "Co-occurrence: 4", "to": "what", "value": 4}, {"from": "not", "title": "Co-occurrence: 4", "to": "happened", "value": 4}, {"from": "not", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "long", "value": 2}, {"from": "not", "title": "Co-occurrence: 6", "to": "about", "value": 6}, {"from": "not", "title": "Co-occurrence: 2", "to": "now", "value": 2}, {"from": "not", "title": "Co-occurrence: 2", "to": "order", "value": 2}, {"from": "think", "title": "Co-occurrence: 2", "to": "help", "value": 2}, {"from": "think", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "think", "title": "Co-occurrence: 3", "to": "like", "value": 3}, {"from": "think", "title": "Co-occurrence: 2", "to": "maybe", "value": 2}, {"from": "think", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "think", "title": "Co-occurrence: 3", "to": "world", "value": 3}, {"from": "think", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "russia", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "use", "title": "Co-occurrence: 2", "to": "nukes", "value": 2}, {"from": "use", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "nukes", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "european", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "european", "title": "Co-occurrence: 2", "to": "cant", "value": 2}, {"from": "help", "title": "Co-occurrence: 2", "to": "right", "value": 2}, {"from": "help", "title": "Co-occurrence: 3", "to": "like", "value": 3}, {"from": "help", "title": "Co-occurrence: 2", "to": "maybe", "value": 2}, {"from": "help", "title": "Co-occurrence: 3", "to": "world", "value": 3}, {"from": "help", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "like", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "maybe", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "involved", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "what", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "happened", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "right", "title": "Co-occurrence: 3", "to": "out", "value": 3}, {"from": "right", "title": "Co-occurrence: 2", "to": "need", "value": 2}, {"from": "right", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "like", "title": "Co-occurrence: 3", "to": "maybe", "value": 3}, {"from": "like", "title": "Co-occurrence: 7", "to": "world", "value": 7}, {"from": "like", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "like", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "like", "title": "Co-occurrence: 2", "to": "now", "value": 2}, {"from": "like", "title": "Co-occurrence: 2", "to": "order", "value": 2}, {"from": "like", "title": "Co-occurrence: 4", "to": "about", "value": 4}, {"from": "maybe", "title": "Co-occurrence: 3", "to": "world", "value": 3}, {"from": "maybe", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "dont", "title": "Co-occurrence: 3", "to": "ww2", "value": 3}, {"from": "dont", "title": "Co-occurrence: 2", "to": "america", "value": 2}, {"from": "dont", "title": "Co-occurrence: 2", "to": "need", "value": 2}, {"from": "dont", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "dont", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "grandfather", "title": "Co-occurrence: 2", "to": "side", "value": 2}, {"from": "grandfather", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "grandfather", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "grandfather", "title": "Co-occurrence: 2", "to": "ussr", "value": 2}, {"from": "generation", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "generation", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "didnt", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "didnt", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "fight", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "world", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "world", "title": "Co-occurrence: 5", "to": "ww2", "value": 5}, {"from": "world", "title": "Co-occurrence: 2", "to": "cant", "value": 2}, {"from": "world", "title": "Co-occurrence: 4", "to": "now", "value": 4}, {"from": "world", "title": "Co-occurrence: 7", "to": "about", "value": 7}, {"from": "world", "title": "Co-occurrence: 3", "to": "world", "value": 3}, {"from": "world", "title": "Co-occurrence: 3", "to": "order", "value": 3}, {"from": "side", "title": "Co-occurrence: 2", "to": "putin", "value": 2}, {"from": "side", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "side", "title": "Co-occurrence: 2", "to": "ussr", "value": 2}, {"from": "putin", "title": "Co-occurrence: 2", "to": "ww2", "value": 2}, {"from": "putin", "title": "Co-occurrence: 2", "to": "allied", "value": 2}, {"from": "putin", "title": "Co-occurrence: 2", "to": "ussr", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 3", "to": "allied", "value": 3}, {"from": "ww2", "title": "Co-occurrence: 3", "to": "ussr", "value": 3}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "opinion", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "theres", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 4", "to": "churchill", "value": 4}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "involved", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "what", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "happened", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 3", "to": "out", "value": 3}, {"from": "ww2", "title": "Co-occurrence: 5", "to": "about", "value": 5}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "some", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "other", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 3", "to": "need", "value": 3}, {"from": "ww2", "title": "Co-occurrence: 6", "to": "during", "value": 6}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "after", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "fought", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "usa", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "america", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "cant", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "allies", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "now", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "start", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 3", "to": "order", "value": 3}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "same", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "them", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "most", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "white", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "military", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "winston", "value": 2}, {"from": "ww2", "title": "Co-occurrence: 2", "to": "back", "value": 2}, {"from": "allied", "title": "Co-occurrence: 2", "to": "ussr", "value": 2}, {"from": "opinion", "title": "Co-occurrence: 4", "to": "theres", "value": 4}, {"from": "opinion", "title": "Co-occurrence: 2", "to": "churchill", "value": 2}, {"from": "opinion", "title": "Co-occurrence: 2", "to": "one", "value": 2}, {"from": "theres", "title": "Co-occurrence: 2", "to": "churchill", "value": 2}, {"from": "theres", "title": "Co-occurrence: 2", "to": "one", "value": 2}, {"from": "churchill", "title": "Co-occurrence: 3", "to": "during", "value": 3}, {"from": "churchill", "title": "Co-occurrence: 2", "to": "winston", "value": 2}, {"from": "involved", "title": "Co-occurrence: 4", "to": "what", "value": 4}, {"from": "involved", "title": "Co-occurrence: 4", "to": "happened", "value": 4}, {"from": "involved", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "involved", "title": "Co-occurrence: 2", "to": "long", "value": 2}, {"from": "involved", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "what", "title": "Co-occurrence: 4", "to": "happened", "value": 4}, {"from": "what", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "what", "title": "Co-occurrence: 2", "to": "long", "value": 2}, {"from": "what", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "happened", "title": "Co-occurrence: 2", "to": "out", "value": 2}, {"from": "happened", "title": "Co-occurrence: 2", "to": "long", "value": 2}, {"from": "happened", "title": "Co-occurrence: 2", "to": "about", "value": 2}, {"from": "out", "title": "Co-occurrence: 4", "to": "need", "value": 4}, {"from": "out", "title": "Co-occurrence: 2", "to": "america", "value": 2}, {"from": "out", "title": "Co-occurrence: 4", "to": "left", "value": 4}, {"from": "out", "title": "Co-occurrence: 2", "to": "some", "value": 2}, {"from": "out", "title": "Co-occurrence: 2", "to": "usa", "value": 2}, {"from": "about", "title": "Co-occurrence: 2", "to": "cant", "value": 2}, {"from": "about", "title": "Co-occurrence: 3", "to": "now", "value": 3}, {"from": "about", "title": "Co-occurrence: 2", "to": "order", "value": 2}, {"from": "some", "title": "Co-occurrence: 3", "to": "need", "value": 3}, {"from": "some", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "other", "title": "Co-occurrence: 2", "to": "during", "value": 2}, {"from": "other", "title": "Co-occurrence: 2", "to": "after", "value": 2}, {"from": "need", "title": "Co-occurrence: 2", "to": "america", "value": 2}, {"from": "need", "title": "Co-occurrence: 4", "to": "left", "value": 4}, {"from": "need", "title": "Co-occurrence: 2", "to": "usa", "value": 2}, {"from": "during", "title": "Co-occurrence: 2", "to": "after", "value": 2}, {"from": "during", "title": "Co-occurrence: 2", "to": "white", "value": 2}, {"from": "during", "title": "Co-occurrence: 2", "to": "winston", "value": 2}, {"from": "usa", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "america", "title": "Co-occurrence: 2", "to": "left", "value": 2}, {"from": "cant", "title": "Co-occurrence: 2", "to": "allies", "value": 2}, {"from": "cant", "title": "Co-occurrence: 2", "to": "now", "value": 2}, {"from": "cant", "title": "Co-occurrence: 2", "to": "start", "value": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"borderWidth": 2, "scaling": {"min": 10, "max": 50}, "color": {"border": "#2B7CE9", "background": "#97C2FC"}, "font": {"size": 16, "face": "arial", "color": "#343434", "align": "center"}}, "edges": {"color": {"color": "#848484", "inherit": false}, "smooth": {"enabled": true, "type": "dynamic"}, "width": 0.5}, "physics": {"barnesHut": {"gravitationalConstant": -20000, "centralGravity": 0.3, "springLength": 250, "springConstant": 0.001}, "minVelocity": 0.75}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

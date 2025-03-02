@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2bda3be90976eb3c5bd76dc32ca46301 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2bda3be90976eb3c5bd76dc32ca46301" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2bda3be90976eb3c5bd76dc32ca46301 = L.map(
+                "map_2bda3be90976eb3c5bd76dc32ca46301",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ea9541ae4e4b45b2968379860d7936fc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ea9541ae4e4b45b2968379860d7936fc.addTo(map_2bda3be90976eb3c5bd76dc32ca46301);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD HH:mm:ss");
+                }
+            });
+            map_2bda3be90976eb3c5bd76dc32ca46301.timeDimension = L.timeDimension(
+                {
+                    period: "PT1H",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {
+  "position": "bottomleft",
+  "minSpeed": 0.1,
+  "maxSpeed": 1,
+  "autoPlay": true,
+  "loopButton": true,
+  "timeSliderDragUpdate": true,
+  "speedSlider": true,
+  "playerOptions": {
+  "transitionTime": 200,
+  "loop": false,
+  "startOver": true,
+},
+}
+            );
+            map_2bda3be90976eb3c5bd76dc32ca46301.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [97.7453061, 64.6863136]}, "properties": {"time": "2025-03-01 21:42:09", "popup": "User: DMJ1037459<br>Tweet: So you think Europe going to war with russia directly will not force WW3 with use of nukes on Europe...<br>Location: russia"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:42:09", "popup": "User: DMJ1037459<br>Tweet: So you think Europe going to war with russia directly will not force WW3 with use of nukes on Europe...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:42:09", "popup": "User: DMJ1037459<br>Tweet: So you think Europe going to war with russia directly will not force WW3 with use of nukes on Europe...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:42:11", "popup": "User: rubytubee<br>Tweet: He threatened the US and insulted the guy keeping him alive...this sabotage was on purpose...he won'...<br>Location: America"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:42:11", "popup": "User: rubytubee<br>Tweet: He threatened the US and insulted the guy keeping him alive...this sabotage was on purpose...he won'...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [20.0461323, 39.9159007]}, "properties": {"time": "2025-03-01 21:42:21", "popup": "User: SamBecket178357<br>Tweet: This is why the war must end. Trump wants to end it. Zelenskyy wants to drag us into WW3. I\u2019m not su...<br>Location: WW3"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-77.19689408347676, 39.2694715]}, "properties": {"time": "2025-03-01 21:42:21", "popup": "User: WW3_Monitor<br>Tweet: Reports of Israeli reconnaisance drones over Damascus....<br>Location: Damascus"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-122.42028000780465, 37.751714050000004]}, "properties": {"time": "2025-03-01 21:42:22", "popup": "User: Renball<br>Tweet: He's going to get his whole nation killed, Reality, Ukraine hasn't won in 3yrs of fighting with our ...<br>Location: Reality"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:42:22", "popup": "User: Renball<br>Tweet: He's going to get his whole nation killed, Reality, Ukraine hasn't won in 3yrs of fighting with our ...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [31.2718321, 49.4871968]}, "properties": {"time": "2025-03-01 21:42:22", "popup": "User: Renball<br>Tweet: He's going to get his whole nation killed, Reality, Ukraine hasn't won in 3yrs of fighting with our ...<br>Location: Ukraine"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [104.999955, 35.0000663]}, "properties": {"time": "2025-03-01 21:45:47", "popup": "User: rigo_eddie<br>Tweet: Fuck me. You want to start picking your wars on order es you can win????? The US hasn't won a war si...<br>Location: China"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:45:47", "popup": "User: rigo_eddie<br>Tweet: Fuck me. You want to start picking your wars on order es you can win????? The US hasn't won a war si...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [48.0254474, 46.3421653]}, "properties": {"time": "2025-03-01 21:45:49", "popup": "User: 9NinetyOneNine<br>Tweet: This is the idealism I was talking about.\n\nIf the USSR collapsed before WW2, you would have had Russ...<br>Location: USSR"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.0902162, 45.1685441]}, "properties": {"time": "2025-03-01 21:45:49", "popup": "User: 9NinetyOneNine<br>Tweet: This is the idealism I was talking about.\n\nIf the USSR collapsed before WW2, you would have had Russ...<br>Location: Siberia"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:45:49", "popup": "User: 9NinetyOneNine<br>Tweet: This is the idealism I was talking about.\n\nIf the USSR collapsed before WW2, you would have had Russ...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-1.9181532111487878, 54.3151594]}, "properties": {"time": "2025-03-01 21:45:57", "popup": "User: superphil123<br>Tweet: Britain did sell off lots of its overseas territory to the US in order to pay for military assistanc...<br>Location: Britain"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:45:57", "popup": "User: superphil123<br>Tweet: Britain did sell off lots of its overseas territory to the US in order to pay for military assistanc...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.495476541418746, 44.32021648585716]}, "properties": {"time": "2025-03-01 21:45:57", "popup": "User: superphil123<br>Tweet: Britain did sell off lots of its overseas territory to the US in order to pay for military assistanc...<br>Location: WW2"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:46:19", "popup": "User: mikelake449021<br>Tweet: Your right Europe doesn't need America, and we don't need Europe, you left out Navy carriers and sub...<br>Location: USA"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:46:19", "popup": "User: mikelake449021<br>Tweet: Your right Europe doesn't need America, and we don't need Europe, you left out Navy carriers and sub...<br>Location: America"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:46:19", "popup": "User: mikelake449021<br>Tweet: Your right Europe doesn't need America, and we don't need Europe, you left out Navy carriers and sub...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [48.0254474, 46.3421653]}, "properties": {"time": "2025-03-01 21:46:25", "popup": "User: JM40772<br>Tweet: We funded the USSR in WW2. They were our allies. Your grandfather fought on the same side as them....<br>Location: USSR"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.495476541418746, 44.32021648585716]}, "properties": {"time": "2025-03-01 21:46:25", "popup": "User: JM40772<br>Tweet: We funded the USSR in WW2. They were our allies. Your grandfather fought on the same side as them....<br>Location: WW2"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-155.42837009716908, 19.593801499999998]}, "properties": {"time": "2025-03-01 21:46:34", "popup": "User: 3rdTimeCharming<br>Tweet: Yeah, the army can man a breakthrough armored division to fight the imagined WW2.5 in Europe or the ...<br>Location: Hawaii"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:46:34", "popup": "User: 3rdTimeCharming<br>Tweet: Yeah, the army can man a breakthrough armored division to fight the imagined WW2.5 in Europe or the ...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.495476541418746, 44.32021648585716]}, "properties": {"time": "2025-03-01 21:46:42", "popup": "User: Smartarse21<br>Tweet: We have lived in this world of, we can\u2019t anger our European allies and have been taken advantage of ...<br>Location: WW2"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:47:05", "popup": "User: DiegoPelig<br>Tweet: Lol I don't think Mr Churchhill thought that  you must have forgotten ww2. They weren't calling Ukra...<br>Location: America"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.0, 51.0]}, "properties": {"time": "2025-03-01 21:47:05", "popup": "User: DiegoPelig<br>Tweet: Lol I don't think Mr Churchhill thought that  you must have forgotten ww2. They weren't calling Ukra...<br>Location: Europe"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [31.2718321, 49.4871968]}, "properties": {"time": "2025-03-01 21:47:05", "popup": "User: DiegoPelig<br>Tweet: Lol I don't think Mr Churchhill thought that  you must have forgotten ww2. They weren't calling Ukra...<br>Location: Ukraine"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [97.7453061, 64.6863136]}, "properties": {"time": "2025-03-01 21:47:17", "popup": "User: joe4deadcat<br>Tweet: Russia fought against Germany in WW2 and allied with the USA...<br>Location: Russia"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:47:17", "popup": "User: joe4deadcat<br>Tweet: Russia fought against Germany in WW2 and allied with the USA...<br>Location: USA"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [10.4478313, 51.1638175]}, "properties": {"time": "2025-03-01 21:47:17", "popup": "User: joe4deadcat<br>Tweet: Russia fought against Germany in WW2 and allied with the USA...<br>Location: Germany"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.495476541418746, 44.32021648585716]}, "properties": {"time": "2025-03-01 21:47:17", "popup": "User: joe4deadcat<br>Tweet: Russia fought against Germany in WW2 and allied with the USA...<br>Location: WW2"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [24.6859225, 45.9852129]}, "properties": {"time": "2025-03-01 21:47:18", "popup": "User: g78057729<br>Tweet: You have some links inside the article for other similar hit piece approaches. \nTo understand fully ...<br>Location: Romania"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [28.85098148430147, 46.9684065]}, "properties": {"time": "2025-03-01 21:47:18", "popup": "User: g78057729<br>Tweet: You have some links inside the article for other similar hit piece approaches. \nTo understand fully ...<br>Location: Antonescu"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:47:19", "popup": "User: kdsathome<br>Tweet: That's an irrelevant point regardless of true or not. The US is already involved thats a fact. Not s...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [20.5447525, 6.3110548]}, "properties": {"time": "2025-03-01 21:47:26", "popup": "User: GregoriusLotor<br>Tweet: \u201dMy grandfather and the Greatest Generation didn\u2019t fight in World War II to see our country side wit...<br>Location: UK"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [48.0254474, 46.3421653]}, "properties": {"time": "2025-03-01 21:47:26", "popup": "User: GregoriusLotor<br>Tweet: \u201dMy grandfather and the Greatest Generation didn\u2019t fight in World War II to see our country side wit...<br>Location: USSR"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-100.445882, 39.7837304]}, "properties": {"time": "2025-03-01 21:47:26", "popup": "User: GregoriusLotor<br>Tweet: \u201dMy grandfather and the Greatest Generation didn\u2019t fight in World War II to see our country side wit...<br>Location: US"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.495476541418746, 44.32021648585716]}, "properties": {"time": "2025-03-01 21:47:26", "popup": "User: GregoriusLotor<br>Tweet: \u201dMy grandfather and the Greatest Generation didn\u2019t fight in World War II to see our country side wit...<br>Location: WW2"}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_9fbcd2f63ecdec518e63072e29adf3e1 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_2bda3be90976eb3c5bd76dc32ca46301);
+        
+</script>
+</html>
