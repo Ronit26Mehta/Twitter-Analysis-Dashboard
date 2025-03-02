@@ -20,6 +20,47 @@ Rakshak is a multi-platform social media analytics project, and this module focu
 ## video  overiview:
 https://drive.google.com/drive/folders/1-MxTBKAqpKGU_-CItFsLAs-h8wKpYVMC
 
+-----
+## outputs:
+![image](https://github.com/user-attachments/assets/092a89e9-b670-4a4b-bb7d-8904cb5df80b)
+
+
+![image](https://github.com/user-attachments/assets/e549e3f1-5a0c-40bf-a5d0-d9726227ee83)
+
+
+![image](https://github.com/user-attachments/assets/67f95a13-2940-4837-9a2e-fe30e8eb5575)
+
+![image](https://github.com/user-attachments/assets/f03480aa-5986-4e8a-b1a0-383412ddf7a3)
+
+![image](https://github.com/user-attachments/assets/601b98a1-9065-4912-9cf3-168c5fcfc578)
+
+![image](https://github.com/user-attachments/assets/2c41f239-3f82-43ce-b746-58d015274afa)
+
+![image](https://github.com/user-attachments/assets/19e1bb21-eacc-46c8-a7a0-5d2288b01f6c)
+
+![image](https://github.com/user-attachments/assets/3b965890-89bc-41f4-b265-5805eaca48cb)
+
+
+![image](https://github.com/user-attachments/assets/135026cd-1f79-41d6-90f9-01eae4c348b9)
+
+![image](https://github.com/user-attachments/assets/e0c04028-169c-4b5f-b8b5-886197fc91b9)
+
+![image](https://github.com/user-attachments/assets/fb919d7f-6ad7-4630-811e-cc974c5b5785)
+
+
+![image](https://github.com/user-attachments/assets/b106a22c-1498-4c44-9f77-eb2cd2f919cd)
+
+![image](https://github.com/user-attachments/assets/9203dd25-4b45-4364-aba6-44ce9fcfebd9)
+
+
+![image](https://github.com/user-attachments/assets/fb667218-e0a4-46cf-8344-e8c59fca0cb0)
+
+
+![image](https://github.com/user-attachments/assets/02a552ab-4f76-43c3-99a1-071b2975a1a8)
+
+
+
+
 ## Project Overview
 
 Rakshak’s Twitter Analysis module is designed to help users:
